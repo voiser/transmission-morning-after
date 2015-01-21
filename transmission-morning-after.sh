@@ -113,10 +113,10 @@ analyze "$DOWNLOADS/$TR_TORRENT_NAME"
 #
 # Remove the torrent after SEEDING seconds
 #
-#sleep $SEEDING && transmission-remote -n $TR_USER:$TR_PASS -t $TR_TORRENT_ID -r &
+sleep $SEEDING && transmission-remote -n $TR_USER:$TR_PASS -t $TR_TORRENT_ID -r &
 
 #
 # Tell Zoe to notify us of the downloaded torrent
 #
-#echo -n "dst=broadcast&tag=send&to=admin&msg=Torrent '$TR_TORRENT_NAME' finished" | nc localhost 30000
+echo -n "dst=broadcast&tag=send&to=admin&msg=Torrent '$TR_TORRENT_NAME' finished" | nc localhost 30000
 
