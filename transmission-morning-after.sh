@@ -11,6 +11,7 @@
 #
 # dos2unix
 # unzip
+# unrar
 # wget
 #
 # Feel free to add support for other file formats
@@ -42,7 +43,12 @@ function analyze_video() {
         echo "Seems it already has subtitles; skipping"
     else
         temp="/tmp/kk"
+        # This heroku app is a wrapper of Subliminal
+        # https://github.com/Diaoul/subliminal
+        # If you don't trust it, which is a good idea, install subliminal and 
+        # remove this
         wget "http://immense-wave-6488.herokuapp.com/?$filename" -O $temp
+        # make my smart TV happy
         dos2unix $temp
         echo "1" > "$dest"
         tail -n +2 $temp >> "$dest"
