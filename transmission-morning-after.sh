@@ -37,7 +37,7 @@ source $CONF
 # downloads the english subtitles of [path]
 #
 function analyze_video() {
-    filename=$(basename $1)
+    filename=$(basename "$1")
     dest="${1%.*}.srt"
     if [ -f "$dest" ]; then
         echo "Seems it already has subtitles; skipping"
